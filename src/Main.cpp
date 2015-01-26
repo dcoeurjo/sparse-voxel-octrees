@@ -43,8 +43,8 @@ freely, subject to the following restrictions:
 
 using namespace std;
 
-/* Number of threads to use - adapt this to your platform for optimal results */
-static const int NumThreads = 16;
+/* Nu mber of threads to use - adapt this to your platform for optimal results */
+static const int NumThreads = 2;
 /* Screen resolution */
 static const int GWidth  = 1280;
 static const int GHeight = 720;
@@ -214,13 +214,13 @@ int renderLoop(void *threadData) {
 }
 
 /* Set this to 1 to generate a voxel octree from a PLY mesh in-memory */
-#define GENERATE_IN_MEMORY 0
+#define GENERATE_IN_MEMORY 1
 /* Set this to 1 to do the same, only writing out a temporary full-sized voxel
  * file to disk and then converting that to an octree. Much, much slower than
  * the method above, but it demonstrates the capability of converting full voxel
  * data as well (i.e. CT scans)
  */
-#define GENERATE_ON_DISK   0
+#define GENERATE_ON_DISK   1
 
 /* Maximum allowed memory allocation sizes for lookup table and cache blocks.
  * Larger => faster conversion usually, but adapt this to your own RAM size.
